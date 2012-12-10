@@ -93,3 +93,10 @@ EOF
 %{_mandir}/man6/chocolate-server.6.*
 %{_mandir}/man6/chocolate-setup.6.*
 
+
+
+%changelog
+* Tue Oct 25 2011 Andrey Bondrov <abondrov@mandriva.org> 1.6.0-1mdv2011.0
++ Revision: 707101
+- imported package chocolate-doom
+
