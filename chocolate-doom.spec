@@ -1,5 +1,5 @@
 Name:		chocolate-doom
-Version:	3.0.0
+Version:	3.0.1
 Release:	1
 Group:		Games/Arcade
 Summary:	Historically compatible Doom engine
