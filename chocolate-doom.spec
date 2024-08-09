@@ -53,7 +53,7 @@ file in docs for other possibilities.
 %make_build
 
 %install
-%make_insall -C build
+%make_install -C build
 
 rm -f %{buildroot}%{_datadir}/applications/screensavers/%{name}-screensaver.desktop
 
