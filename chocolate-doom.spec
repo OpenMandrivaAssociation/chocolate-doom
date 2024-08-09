@@ -1,11 +1,13 @@
 Name:		chocolate-doom
-Version:	3.0.1
+Version:	3.1.0
 Release:	1
 Group:		Games/Arcade
 Summary:	Historically compatible Doom engine
 License:	GPLv2+
 URL:		http://chocolate-doom.org/
-Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
+Source0:      https://github.com/chocolate-doom/chocolate-doom/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
+# Looks like this source is no longer updated
+#Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_mixer)
@@ -43,7 +45,7 @@ To do this, put the file into /usr/share/games/doom or read INSTALL
 file in docs for other possibilities.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %%build
 %configure --bindir=%{_gamesbindir}
