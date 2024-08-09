@@ -8,6 +8,7 @@ URL:		http://chocolate-doom.org/
 Source0:      https://github.com/chocolate-doom/chocolate-doom/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
 # Looks like this source is no longer updated
 #Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:       cmake
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_mixer)
@@ -48,11 +49,11 @@ file in docs for other possibilities.
 %autosetup -n %{name}-%{name}-%{version} -p1
 
 %%build
-%configure --bindir=%{_gamesbindir}
+%cmake
 %make_build
 
 %install
-%make_install iconsdir="%{_iconsdir}/hicolor/64x64/apps"
+%cmake_insall -C build
 
 rm -f %{buildroot}%{_datadir}/applications/screensavers/%{name}-screensaver.desktop
 
