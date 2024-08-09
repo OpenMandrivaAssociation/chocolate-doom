@@ -45,7 +45,7 @@ To do this, put the file into /usr/share/games/doom or read INSTALL
 file in docs for other possibilities.
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-%{name}-%{version} -p1
 
 %%build
 %configure --bindir=%{_gamesbindir}
