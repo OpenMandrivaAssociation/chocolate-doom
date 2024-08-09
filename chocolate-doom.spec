@@ -48,12 +48,12 @@ file in docs for other possibilities.
 %prep
 %autosetup -n %{name}-%{name}-%{version} -p1
 
-%%build
+%build
 %cmake
 %make_build
 
 %install
-%cmake_insall -C build
+%make_insall -C build
 
 rm -f %{buildroot}%{_datadir}/applications/screensavers/%{name}-screensaver.desktop
 
