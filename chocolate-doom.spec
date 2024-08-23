@@ -63,6 +63,7 @@ rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Setup.desktop
 rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Heretic.desktop
 rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Hexen.desktop
 rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Strife.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Doom_Screensaver.desktop
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
