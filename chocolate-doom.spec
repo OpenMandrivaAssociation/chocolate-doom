@@ -58,11 +58,11 @@ autoreconf -vfi
 rm -f %{buildroot}%{_datadir}/applications/screensavers/%{name}-screensaver.desktop
 
 # These suck, we don't like them
-rm -f %{buildroot}%{_datadir}/applications/%{name}.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-setup.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-heretic.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-hexen.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-strife.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Doom.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Setup.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Heretic.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Hexen.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Strife.desktop
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
@@ -125,7 +125,7 @@ Keywords=first;person;shooter;doom;vanilla;
 EOF
 
 %files
-%doc %{_datadir}/doc/chocolate-doom/
+%doc %{_datadir}/doc/chocolate*
 %{_bindir}/%{name}
 %{_bindir}/chocolate-server
 %{_bindir}/chocolate-doom-setup
