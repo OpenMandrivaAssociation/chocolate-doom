@@ -130,17 +130,17 @@ EOF
 %doc %{_docdir}/chocolate-heretic
 %doc %{_docdir}/chocolate-hexen
 %doc %{_docdir}/chocolate-strife
-%{_gamesbindir}/%{name}
-%{_gamesbindir}/chocolate-server
-%{_gamesbindir}/chocolate-doom-setup
-%{_gamesbindir}/chocolate-heretic
-%{_gamesbindir}/chocolate-heretic-setup
-%{_gamesbindir}/chocolate-hexen
-%{_gamesbindir}/chocolate-hexen-setup
-%{_gamesbindir}/chocolate-strife
-%{_gamesbindir}/chocolate-strife-setup
-%{_datadir}/appdata/*.appdata.xml
-%{_datadir}/applications/%{name}.desktop
+#{_gamesbindir}/%{name}
+#{_gamesbindir}/chocolate-server
+#{_gamesbindir}/chocolate-doom-setup
+#{_gamesbindir}/chocolate-heretic
+#{_gamesbindir}/chocolate-heretic-setup
+#{_gamesbindir}/chocolate-hexen
+#{_gamesbindir}/chocolate-hexen-setup
+#{_gamesbindir}/chocolate-strife
+#{_gamesbindir}/chocolate-strife-setup
+#{_datadir}/appdata/*.appdata.xml
+#{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/chocolate-setup.desktop
 %{_datadir}/applications/chocolate-heretic.desktop
 %{_datadir}/applications/chocolate-hexen.desktop
@@ -161,7 +161,7 @@ EOF
 %{_mandir}/man5/strife.cfg.5.*
 %{_mandir}/man6/%{name}.6.*
 %{_mandir}/man6/chocolate-server.6.*
-%{_mandir}/man6/chocolate-setup.6.*
+#{_mandir}/man6/chocolate-setup.6.*
 %{_mandir}/man6/chocolate-doom-setup.6.*
 %{_mandir}/man6/chocolate-heretic-setup.6.*
 %{_mandir}/man6/chocolate-heretic.6.*
