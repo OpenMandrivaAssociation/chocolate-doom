@@ -125,22 +125,17 @@ Keywords=first;person;shooter;doom;vanilla;
 EOF
 
 %files
-#doc AUTHORS
-#doc %{_docdir}/chocolate-doom
-#doc %{_docdir}/chocolate-heretic
-#doc %{_docdir}/chocolate-hexen
-#doc %{_docdir}/chocolate-strife
-#{_gamesbindir}/%{name}
-#{_gamesbindir}/chocolate-server
-#{_gamesbindir}/chocolate-doom-setup
-#{_gamesbindir}/chocolate-heretic
-#{_gamesbindir}/chocolate-heretic-setup
-#{_gamesbindir}/chocolate-hexen
-#{_gamesbindir}/chocolate-hexen-setup
-#{_gamesbindir}/chocolate-strife
-#{_gamesbindir}/chocolate-strife-setup
-#{_datadir}/appdata/*.appdata.xml
-#{_datadir}/applications/%{name}.desktop
+%doc %{_datadir}/doc/chocolate-doom/
+%{_bindir}/%{name}
+%{_bindir}/chocolate-server
+%{_bindir}/chocolate-doom-setup
+%{_bindir}/chocolate-heretic
+%{_bindir}/chocolate-heretic-setup
+%{_bindir}/chocolate-hexen
+%{_bindir}/chocolate-hexen-setup
+%{_bindir}/chocolate-strife
+%{_bindir}/chocolate-strife-setup
+%{_datadir}/applications/chocolate-doom.desktop
 %{_datadir}/applications/chocolate-setup.desktop
 %{_datadir}/applications/chocolate-heretic.desktop
 %{_datadir}/applications/chocolate-hexen.desktop
@@ -149,8 +144,15 @@ EOF
 %{_datadir}/bash-completion/completions/chocolate-heretic
 %{_datadir}/bash-completion/completions/chocolate-hexen
 %{_datadir}/bash-completion/completions/chocolate-strife
+%{_datadir}/metainfo/org.chocolate_doom.Doom.metainfo.xml
+%{_datadir}/metainfo/org.chocolate_doom.Heretic.metainfo.xml
+%{_datadir}/metainfo/org.chocolate_doom.Hexen.metainfo.xml
+%{_datadir}/metainfo/org.chocolate_doom.Strife.metainfo.xml
 %{_iconsdir}/hicolor/64x64/apps/%{name}.png
 %{_iconsdir}/hicolor/64x64/apps/chocolate-setup.png
+%{_iconsdir}/hicolor/64x64/apps/chocolate-heretic.png
+%{_iconsdir}/hicolor/64x64/apps/chocolate-hexen.png
+%{_iconsdir}/hicolor/64x64/apps/chocolate-strife.png
 %{_mandir}/man5/%{name}.cfg.5.*
 %{_mandir}/man5/chocolate-heretic.cfg.5.*
 %{_mandir}/man5/chocolate-hexen.cfg.5.*
