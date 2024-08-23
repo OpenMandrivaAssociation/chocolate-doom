@@ -1,11 +1,14 @@
 Name:		chocolate-doom
-Version:	3.0.1
+Version:	3.1.0
 Release:	1
 Group:		Games/Arcade
 Summary:	Historically compatible Doom engine
 License:	GPLv2+
 URL:		http://chocolate-doom.org/
-Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
+Source0:      https://github.com/chocolate-doom/chocolate-doom/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
+# Looks like this source is no longer updated
+#Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:       cmake
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_mixer)
@@ -43,11 +46,11 @@ To do this, put the file into /usr/share/games/doom or read INSTALL
 file in docs for other possibilities.
 
 %prep
-%setup -q
+%autosetup -n %{name}-%{name}-%{version} -p1
 
-%%build
-%configure --bindir=%{_gamesbindir}
-%make_build
+%build
+autoreconf -vfi
+%configure 
 
 %install
 %make_install iconsdir="%{_iconsdir}/hicolor/64x64/apps"
@@ -55,11 +58,12 @@ file in docs for other possibilities.
 rm -f %{buildroot}%{_datadir}/applications/screensavers/%{name}-screensaver.desktop
 
 # These suck, we don't like them
-rm -f %{buildroot}%{_datadir}/applications/%{name}.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-setup.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-heretic.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-hexen.desktop
-rm -f %{buildroot}%{_datadir}/applications/chocolate-strife.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Doom.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Setup.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Heretic.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Hexen.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.chocolate_doom.Strife.desktop
+rm -f %{buildroot}%{_datadir}/applications/screensavers/org.chocolate_doom.Doom_Screensaver.desktop
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
@@ -122,22 +126,17 @@ Keywords=first;person;shooter;doom;vanilla;
 EOF
 
 %files
-%doc AUTHORS
-%doc %{_docdir}/chocolate-doom
-%doc %{_docdir}/chocolate-heretic
-%doc %{_docdir}/chocolate-hexen
-%doc %{_docdir}/chocolate-strife
-%{_gamesbindir}/%{name}
-%{_gamesbindir}/chocolate-server
-%{_gamesbindir}/chocolate-doom-setup
-%{_gamesbindir}/chocolate-heretic
-%{_gamesbindir}/chocolate-heretic-setup
-%{_gamesbindir}/chocolate-hexen
-%{_gamesbindir}/chocolate-hexen-setup
-%{_gamesbindir}/chocolate-strife
-%{_gamesbindir}/chocolate-strife-setup
-%{_datadir}/appdata/*.appdata.xml
-%{_datadir}/applications/%{name}.desktop
+%doc %{_datadir}/doc/chocolate*
+%{_bindir}/%{name}
+%{_bindir}/chocolate-server
+%{_bindir}/chocolate-doom-setup
+%{_bindir}/chocolate-heretic
+%{_bindir}/chocolate-heretic-setup
+%{_bindir}/chocolate-hexen
+%{_bindir}/chocolate-hexen-setup
+%{_bindir}/chocolate-strife
+%{_bindir}/chocolate-strife-setup
+%{_datadir}/applications/chocolate-doom.desktop
 %{_datadir}/applications/chocolate-setup.desktop
 %{_datadir}/applications/chocolate-heretic.desktop
 %{_datadir}/applications/chocolate-hexen.desktop
@@ -146,8 +145,15 @@ EOF
 %{_datadir}/bash-completion/completions/chocolate-heretic
 %{_datadir}/bash-completion/completions/chocolate-hexen
 %{_datadir}/bash-completion/completions/chocolate-strife
+%{_datadir}/metainfo/org.chocolate_doom.Doom.metainfo.xml
+%{_datadir}/metainfo/org.chocolate_doom.Heretic.metainfo.xml
+%{_datadir}/metainfo/org.chocolate_doom.Hexen.metainfo.xml
+%{_datadir}/metainfo/org.chocolate_doom.Strife.metainfo.xml
 %{_iconsdir}/hicolor/64x64/apps/%{name}.png
 %{_iconsdir}/hicolor/64x64/apps/chocolate-setup.png
+%{_iconsdir}/hicolor/64x64/apps/chocolate-heretic.png
+%{_iconsdir}/hicolor/64x64/apps/chocolate-hexen.png
+%{_iconsdir}/hicolor/64x64/apps/chocolate-strife.png
 %{_mandir}/man5/%{name}.cfg.5.*
 %{_mandir}/man5/chocolate-heretic.cfg.5.*
 %{_mandir}/man5/chocolate-hexen.cfg.5.*
@@ -158,7 +164,7 @@ EOF
 %{_mandir}/man5/strife.cfg.5.*
 %{_mandir}/man6/%{name}.6.*
 %{_mandir}/man6/chocolate-server.6.*
-%{_mandir}/man6/chocolate-setup.6.*
+#{_mandir}/man6/chocolate-setup.6.*
 %{_mandir}/man6/chocolate-doom-setup.6.*
 %{_mandir}/man6/chocolate-heretic-setup.6.*
 %{_mandir}/man6/chocolate-heretic.6.*
