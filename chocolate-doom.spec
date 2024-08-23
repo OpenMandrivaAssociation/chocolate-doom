@@ -49,11 +49,11 @@ file in docs for other possibilities.
 %autosetup -n %{name}-%{name}-%{version} -p1
 
 %build
-%cmake
-%make_build
+autoreconf -vfi
+%configure 
 
 %install
-%make_install -C build
+%make_install iconsdir="%{_iconsdir}/hicolor/64x64/apps"
 
 rm -f %{buildroot}%{_datadir}/applications/screensavers/%{name}-screensaver.desktop
 
