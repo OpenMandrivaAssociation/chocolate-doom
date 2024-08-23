@@ -125,11 +125,11 @@ Keywords=first;person;shooter;doom;vanilla;
 EOF
 
 %files
-%doc AUTHORS
-%doc %{_docdir}/chocolate-doom
-%doc %{_docdir}/chocolate-heretic
-%doc %{_docdir}/chocolate-hexen
-%doc %{_docdir}/chocolate-strife
+#doc AUTHORS
+#doc %{_docdir}/chocolate-doom
+#doc %{_docdir}/chocolate-heretic
+#doc %{_docdir}/chocolate-hexen
+#doc %{_docdir}/chocolate-strife
 #{_gamesbindir}/%{name}
 #{_gamesbindir}/chocolate-server
 #{_gamesbindir}/chocolate-doom-setup
