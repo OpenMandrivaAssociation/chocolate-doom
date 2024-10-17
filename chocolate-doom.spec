@@ -4,7 +4,7 @@ Release:	1
 Group:		Games/Arcade
 Summary:	Historically compatible Doom engine
 License:	GPLv2+
-URL:		http://chocolate-doom.org/
+URL:		https://chocolate-doom.org/
 Source0:      https://github.com/chocolate-doom/chocolate-doom/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
 # Looks like this source is no longer updated
 #Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
