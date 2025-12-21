@@ -8,6 +8,10 @@ URL:		https://chocolate-doom.org/
 Source0:      https://github.com/chocolate-doom/chocolate-doom/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
 # Looks like this source is no longer updated
 #Source0:	http://www.chocolate-doom.org/downloads/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:       cmake
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl2)
